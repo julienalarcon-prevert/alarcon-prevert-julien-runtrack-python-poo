@@ -1,25 +1,20 @@
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        
-    def afficherpoints(self):
-        print(f"Cooordonnées : ({self.x}, {self.y})")
+class Animal():
+    def __init__(self, age = 0, prenom = "" ):
+        self.age = age
+        self.prenom = prenom
     
-    def prtX(self):
-        print(f"Coordonnées de X : {self.x}")
+    def vieillir(self):
+        self.age += 1
     
-    def prtY(self):
-        print(f"Coordonnées de Y : {self.y}")
-    
-    def newX(self, newX):
-        self.x = newX
+    def nommer(self, nom):
+        self.prenom = nom
 
-    def newY(self, newY):
-        self.x = newY
-        
-point1 = Point(10, 20)
-point1.afficherpoints()
+mon_animal = Animal()
 
-point1.newX(50)
-point1.prtX()
+print(f"Age initial : {mon_animal.age}")
+
+mon_animal.vieillir()
+print(f"Age après avoir vieilli: {mon_animal.age}")
+
+mon_animal.nommer("Ouki")
+print(f"Le prenom de l'animal est: {mon_animal.prenom}")
