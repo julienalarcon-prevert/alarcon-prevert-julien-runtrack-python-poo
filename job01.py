@@ -1,24 +1,26 @@
-import math
-
-class Cercle:
-    def __init__(self, rayon):
-        self.rayon = rayon
+class Produit:
+    def __init__(self, nom, prixHT, TVA):
+        self.nom = nom
+        self.prixHT = prixHT
+        self.tva = TVA
     
-    def changer_rayon(self, new_rayon):
-        self.rayon = new_rayon
+    def calculerprixttc(self):
+        return self.prixHT * (1 + self.tva / 100)
     
-    def afficher_infos(self):
-        print(f"Cercle de rayon : {self.rayon}")
+    def modifiernom(self, newnom):
+        self.nom = newnom
+        
+    def modifierprix(self, newprix):
+        self.prixHT = newprix
     
-    def diametre(self):
-        return self.rayon * 2
+    def obtenirnom(self):
+        return self.nom
     
-    def circonference(self):
-        return 2 * math.pi * self.rayon
-
-    def aire(self):
-        return math.pi * (self.rayon * self.rayon)
+    def obtenirprixht(self):
+        return self.prixHT
     
+    def obtenirtva(self):
+        return self.tva
     
-cercle1 = Cercle(4)
-cercle2 = Cercle(7)
+    def afficher(self):
+        return f"Produit: {self.nom} | HT: {self.prixHT} | TVA: {self.tva}% | TTC: {self.calculerprixttc()}"
