@@ -1,13 +1,11 @@
-class Operation:
-    def __init__(self, n1=0, n2=0):
-        self.nombre1 = n1
-        self.nombre2 = n2
+class Personne:
+    def __init__(self, nom, prenom):
+        self.nom = nom
+        self.prenom = prenom
         
-    def addition(self):
-        resultat = self.nombre1 + self.nombre2
-        return resultat
+    def SePresenter(self):
+        return f"je m'appelle {self.nom} {self.prenom}"
+        
+personne1 = Personne("Alarcon prevert", "Julien")  
 
-operation = Operation(12, 5)
-
-somme = operation.addition()
-print(somme)
+print(personne1.SePresenter())
