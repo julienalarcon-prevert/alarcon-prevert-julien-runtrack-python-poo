@@ -1,20 +1,32 @@
-class Animal():
-    def __init__(self, age = 0, prenom = "" ):
-        self.age = age
-        self.prenom = prenom
+class Personnage():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
     
-    def vieillir(self):
-        self.age += 1
+    def gauche(self):
+        self.x -= 1
     
-    def nommer(self, nom):
-        self.prenom = nom
+    def droite(self):
+          self.x += 1
+    
+    def haut(self):
+        self.y -= 1
+        
+    def bas(self):
+        self.y += 1
+    
+    def position(self):
+        return(self.x, self.y)
+    
+perso = Personnage(10, 10)
 
-mon_animal = Animal()
+print(perso.position())
 
-print(f"Age initial : {mon_animal.age}")
+perso.droite()
+perso.bas()
+print(perso.position())
 
-mon_animal.vieillir()
-print(f"Age après avoir vieilli: {mon_animal.age}")
-
-mon_animal.nommer("Ouki")
-print(f"Le prenom de l'animal est: {mon_animal.prenom}")
+perso.gauche()
+perso.gauche()
+perso.haut()
+print(perso.position())
