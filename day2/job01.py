@@ -3,6 +3,7 @@ class Livre:
         self.__titre = titre
         self.__auteur = auteur
         self.__nbpages = nbpages
+        self.__disponible = True
         
     def get_titre(self):
         return self.__titre
@@ -24,4 +25,21 @@ class Livre:
             self.__nbpages = nwnbpages
         else:
             print("Error : Must use integer")
-        
+            
+    def verification(self):
+        return self.__disponible
+    
+    def emprunter(self):
+        if self.verification():
+            self.__disponible = False
+            print(f"Le livre {self.__titre} à été emprunté")
+        else : 
+            print(f"{self.__titre} à été emprunté")
+            
+    def rendre(self):
+        if not self.verification():
+            self.__disponible = True
+            print(f"le livre {self.__titre} à été rendu")
+        else:
+            print(f"Ce live est déja présent")
+            
